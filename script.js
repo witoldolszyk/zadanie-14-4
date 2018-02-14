@@ -1,4 +1,5 @@
 // dodanie odpowiedniej klasy
+/*
 var Movie = React.createClass({
 
   propTypes: {
@@ -12,7 +13,7 @@ var Movie = React.createClass({
         React.createElement('img', {src: this.props.movie.post})
     )}
 });
-
+ */
 //tablice skopoiowane z pooprzendiego ćwiczenia
 var movies = [
   {
@@ -48,6 +49,7 @@ var movies = [
 ];
 
 // krok 4
+ /*
 var MovieTitle = React.createClass({
 
   propTypes:{
@@ -70,18 +72,20 @@ var MovieDescription = React.createClass({
     )
   }
 });
-
+*/
 var MovieList = React.createClass({
   render: function() {
+    var moviesElements = movies.map(function(movie) {
+      return React.createElement('li', {key: movies.id,} ,
+        React.createElement('h2', {}, movie.title),
+        React.createElement('p', {}, movie.desc),
+        React.createElement('img', {src: movie.post})
+      );
+    });
     return (
       React.createElement('ul', {}, moviesElements)
     )
   }
-});
-var moviesElements = movies.map(function(movie) {
-  return(
-    React.createElement('ul', {key: movie.id, movies: movies})
-  )
 });
 
 var element =
